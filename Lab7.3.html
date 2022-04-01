@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>LR.7.3</title>
+<title> Web R3 </title>
 </head>
 <body>
 <div id="app"></div>
@@ -12,20 +12,20 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
 const propsValues = {
-title: "Список группы",
+title: "List of group",
 items: [
-"Студент 1",
-"Студент 2",
-"Студент 3",
-"Студент 4",
-"Студент 5",
-"Студент 6"
+"Student 1",
+"Student 2",
+"Student 3",
+"Student 4",
+"Student 5",
+"Student 6"
 ]
 };
 
 class Item extends React.Component {
 render() {
-<!— возвращаем список через точку —>
+<!— return list separated by dot —>
 return <li>{this.props.name}</li>;
 }
 }
@@ -37,15 +37,15 @@ super(props);
 this.onTextChanged = this.onTextChanged.bind(this);
 }
 
-<!— обработчик при изменеии-->
+<!— handler on change-->
 onTextChanged(e){
-var text = e.target.value.trim(); // удаляем пробелы
-this.props.filter(text); // передаем введенный текст в родительский компонент
+var text = e.target.value.trim(); // remove spaces
+this.props.filter(text); // passing the entered text to the parent component
 }
 
 render() {
 
-return <input placeholder="Поиск" onChange={this.onTextChanged} />;
+return <input placeholder="Search" onChange={this.onTextChanged} />;
 }
 }
 
@@ -58,7 +58,7 @@ this.filterList = this.filterList.bind(this);
 }
 
 filterList(text){
-<!— берет данные на вход, приводит к нижнему регистру и сопоставляет данные со списком —>
+<!— takes data as input, casts it to lower case, and matches the data against a list —>
 var filteredList = this.props.data.items.filter(function(item){
 return item.toLowerCase().search(text.toLowerCase())!== -1;
 });
