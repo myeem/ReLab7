@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>LR.7</title>
+<title> Web R </title>
 </head>
 <body>
 <div id="app"></div>
@@ -13,14 +13,14 @@
 class Clock extends React.Component {
 constructor(props) {
 super(props);
-this.state = {date: new Date(), name: "Мария"};
+this.state = {date: new Date(), name: "Mahfuzur"};
 this.unmount = this.unmount.bind(this);
 }
-<!— размонтирование компонента, при нажатии исчезает —>
+<!— unmount component, disappears when clicked —>
 unmount(){
 ReactDOM.unmountComponentAtNode(document.getElementById("app"));
 }
-<!— через каждые 1000 мл с обновляется состояние —>
+<!— every 1000 ml s the status is updated —>
 componentDidMount() {
 this.timerId = setInterval(
 ()=> this.tick(),
@@ -43,8 +43,8 @@ date: new Date()
 render() {
 return (
 <div>
-<h1>Здравствуйте, {this.state.name}</h1>
-<h2>Текущее время {this.state.date.toLocaleTimeString()}.</h2>
+<h1>Hello!, {this.state.name}</h1>
+<h2>Current time {this.state.date.toLocaleTimeString()}.</h2>
 <button onClick={this.unmount}>Unmount</button>
 </div>
 );
